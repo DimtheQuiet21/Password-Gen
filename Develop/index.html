@@ -16,6 +16,32 @@
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
+        <div class = "criteria">
+          <h2>Select Your Criteria</h2>
+          <ul>
+            <li>
+              <input type="range" min = "8" max = "128" value = "1" id="passlength" name="passlength" class = "slider"/>
+              <label for="passlength">Set Password Length: <span id="passlengthout"></span> Characters</label>
+            </li>
+            <li>
+              <input type="checkbox" id="uppercase" name="uppercase" />
+              <label for="uppercase">Include Uppercase</label>
+            </li>
+            <li>
+              <input type="checkbox" id="lowercase" name="lowercase" />
+              <label for="lowercase">Include Lowercase</label>
+            </li>
+            <li>
+              <input type="checkbox" id="numbers" name="numbers" />
+              <label for="numbers">Include Numbers</label>
+            </li>
+            <li>
+              <input type="checkbox" id="special" name="special" />
+              <label for="special">Include Special Characters</label>
+            </li>
+          </ul>
+        </div>
+
         <div class="card-body">
           <textarea
             readonly
