@@ -50,6 +50,21 @@ header {
   height: 2px;
 }
 
+.criteria {
+  content: " ";
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #e7e9eb;
+  height: 100%;
+}
+
+.criteria ul{
+  display:flex;
+  flex-direction: column;
+  list-style: none;
+  list-style-position: inside;
+}
 .card-body {
   min-height: 100px;
 }
