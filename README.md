@@ -18,7 +18,7 @@ Through the process of creating this password geneator, I have displayed that I 
 
 ## Screenshot and Link
 
-![Screenshot of Alan Lee's Password Generator](/assets/images/Screenshot-Passwprd-Gen.png?raw=true "Alan Lee's Password Generator")
+![Screenshot of Alan Lee's Password Generator](/assets/images/Screenshot-Password-Gen.png?raw=true "Alan Lee's Password Generator")
 
 Link to Alan Lee's Password Generator https://dimthequiet21.github.io/Password-Gen/
 
