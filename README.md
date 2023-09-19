@@ -33,8 +33,7 @@ Follow the Steps below to use the Password Generator effectively
 2). Follow the On-screen prompts to select your starting criteria.
 3). Adjust criteria as needed with the sliders and checkboxes
 4). Click the Generate Button to generate a secure password.
-5). Right Click (or push f12 on the keyobard) and click Inspect to open the HTML.
-6). Copy the Password from the HTML file.
+5). Copy the Password!
 
 ## Credits
 
