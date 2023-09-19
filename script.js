@@ -15,8 +15,10 @@ slider.oninput = function() {
   output.innerHTML = this.value;
 };
 
+
 //Select the Password Criteria
 
+// This function tests for valid password length
 function validatelength(userLength){
   if (passstartlen < 8 || passstartlen > 128){
     alert("Please select a password length between 8 and 128 characters");
@@ -27,6 +29,7 @@ function validatelength(userLength){
   }
 }
 
+//This function tests to see if you selected any characters at all
 function validatecriteria(userCriteria){
   if (lowertoggle === true || uppertoggle === true || numbertoggle === true|| specialtoggle === true){
     return true;}
@@ -36,6 +39,7 @@ function validatecriteria(userCriteria){
   }
 }
 
+// This function begins the password criteria selection process
 function selectCriteria(){
 
   passstartlen = prompt("Please select a password length between 8 and 128 characters");
@@ -68,10 +72,11 @@ function writePassword() {
   var passlength = [];
   var passextra = ''; //These are extra random alphanumerics to add onto the end of my password
   var coin = [];
-  ; // Always reset the passwordmiddle to blank before generating a new password
 
   function generatePassword(){
+
   passwordmiddle = ''; // reset the password to blank
+
     // First Let's cover the Odd Cases of ONLY numbers/special characters
     if (lowercase.checked == false && uppercase.checked == false){
       if (numbers.checked == true && special.checked == true){
@@ -97,7 +102,13 @@ function writePassword() {
       }
     }
 
-    // Now we cover the cases where we have letters
+    /* Now we cover the cases where we have letters. The way I do this is more complex and a test of my 
+    skill as a coder. I want to pull from three arrays of words, hefty words and then combine
+    them together to make the password. If I am under the required length, I pad the password string. 
+    If I am OVER the password length, I slice off the front! Why? Because
+    if the user selects numbers and characters, those currently go to the end!
+    Is that true random? No, but it looks nicer. If I had my way and more time I'd try 
+    to make the entire password generation language based rather than randomized.*/
     if (lowercase.checked == true || uppercase.checked == true){
       password_array[0] = adjarray[Math.floor(Math.random()*adjarray.length)];
       password_array[1] = animalarray[Math.floor(Math.random()*animalarray.length)];
@@ -124,8 +135,9 @@ function writePassword() {
         }
       
       passwordmiddle = password_array[0]+password_array[1]+password_array[2]+password_array[3]+password_array[4]; 
-
       passlength = passwordmiddle.length;
+
+      // Time to cehck the length of the password and pad or slice as needed.
       if (passlength > slider.value){
         passwordmiddle = passwordmiddle.slice((passlength-slider.value),passlength); // slice off the front of the string to match the length of the password. automatically keep any applied numbers and letters
       } else if (passlength < slider.value){
@@ -137,7 +149,7 @@ function writePassword() {
         passwordmiddle = passwordmiddle + passextra;
       }
 
-      //Time to select based on Lower and Upper Case criteria
+      //Time to Capitalize or Decapitalize based on Lower and Upper Case criteria
       if (lowercase.checked == true && uppercase.checked == false){
         passwordmiddle = passwordmiddle.toLowerCase();
         //console.log("Only Lowercase"); // Only allow lowercase
@@ -145,7 +157,7 @@ function writePassword() {
       else if (lowercase.checked == false && uppercase.checked == true){
         passwordmiddle = passwordmiddle.toUpperCase();
         //console.log ("Only Uppercase");
-      } //only allow uppercase
+      }
       else if (lowercase.checked == true && uppercase.checked == true){
         for (let i = 0; i< passwordmiddle.length; i++){
           coin = Math.floor(Math.random()*2); //Make a simple coin flip to simulate a 50/50 chance of upper or lower for each letter
