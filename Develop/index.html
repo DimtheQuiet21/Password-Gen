@@ -18,7 +18,7 @@
         </div>
         <div class = "criteria">
           <h2>Select Your Criteria</h2>
-          <ul>
+          <ul id = "criterialist"
             <li>
               <input type="range" min = "8" max = "128" value = "1" id="passlength" name="passlength" class = "slider"/>
               <label for="passlength">Set Password Length: <span id="passlengthout"></span> Characters</label>
@@ -51,6 +51,7 @@
           ></textarea>
         </div>
         <div class="card-footer">
+          <button id="selection" class="btn">Select Criteria</button>
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>

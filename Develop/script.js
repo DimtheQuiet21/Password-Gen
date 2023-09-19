@@ -2,14 +2,22 @@
 
 
 // Get references to the #generate element
+var selectionBtn = document.querySelector("#selection");
 var generateBtn = document.querySelector("#generate");
 var password_array = ["","","","",""];
 var randnum = [0,0,0]
 var passwordfinal = "";
 var passwordmiddle = "";
+var slider = document.getElementById("passlength");
+var output = document.getElementById("passlengthout");
 
-//Write HTML to remember Checkbox input
- 
+//Select the Password Criteria
+function selectCriteria(){
+  document.getElementById("generate").style.display = "inline-block";
+  document.getElementById("selection").style.display = "none";
+  document.getElementById("criterialist").style.display = "flex";
+  console.log("Criteria Selected");
+}
 
 
 // Write password to the #password input
@@ -115,16 +123,16 @@ function writePassword() {
 
 };
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-var slider = document.getElementById("passlength");
-var output = document.getElementById("passlengthout");
-output.innerHTML = slider.value; // Display the default slider value
-
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.innerHTML = this.value;
 };
+
+// Add event listener to generate button
+selectionBtn.addEventListener("click", selectCriteria);
+generateBtn.addEventListener("click", writePassword);
+output.innerHTML = slider.value; // Display the default slider value
+
+
 
 
