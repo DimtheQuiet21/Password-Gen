@@ -1,7 +1,6 @@
 var animalarray =[];
 var verbarray =[];
 var adjarray =[];
-var numarray =[];
 var chararray =[];
 
 chararray =["!","@","#","$","%","^","&","*","(",")","_","-","=","+","[","]","{","}","|",";",":","'","<",">","?","/",".",",","~","`"];
